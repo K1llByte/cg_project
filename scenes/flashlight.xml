@@ -1,0 +1,82 @@
+<colors>
+    <color name="test_diff" r="0.8" g="0.8" b="0.8" a="1.0"/>
+    <color name="test_amb" r="0.4" g="0.4" b="0.4" a="1.0"/>
+    <color name="test_spec" r="0.2" g="0.2" b="0.2" a="1.0"/>
+    <color name="test_emi" r="1.0" g="1.0" b="1.0" a="1.0"/>
+
+    <color name="null" r="0.0" g="0.0" b="0.0" a="1.0"/>
+    <color name="white" r="1.0" g="1.0" b="1.0" a="1.0"/>
+
+    <color name="fl_diff" r="0.3" g="0.3" b="0.3" a="1.0"/>
+    <color name="fl_amb" r="0.3" g="0.3" b="0.3" a="1.0"/>
+</colors>
+
+<scene>
+    <skybox width="500" texture="assets/skybox_stars.png"/>
+    <lights>
+        
+        <!-- <light type="DIRECTIONAL" dirX="1" dirY="1" dirZ="0"/> -->
+        <!-- LIGHT 0 -->
+        <light type="POINT" posX="5" posY="5" posZ="0" attenuation="0"/>
+        <!-- <light type="SPOT" posX="5" posY="5" posZ="0" dirX="-1" dirY="-1" dirZ="0"/> -->
+        <!-- LIGHT 1 -->
+        <light type="SPOT" posX="-3.25" dirX="-1" dirY="0" dirZ="0" cutoff="10" attenuation="0"/>
+    </lights>
+    <camera posX="15" posY="15" posZ="15"/>
+
+    <group>
+            <!-- LIGHT 0 REPRESENTATION -->
+            <translate X="5" Y="5"/>
+            <model command="sphere 0.1 10 10" diffuse="null" ambient="null" specular="null" emission="white"/>
+    </group>
+
+
+    <group> <!-- FLASHLIGHT -->
+
+        <group> <!-- Handle -->
+            <rotate angle="90" axisZ="1"/>
+            <model command="cylinder 1 4 20 20" diffuse="fl_diff" ambient="fl_amb" />
+        </group>
+
+        <group> <!-- Front Handle -->
+            <translate X="-2.5"/>
+            <rotate angle="90" axisZ="1"/>
+            <model command="cylinder 1.2 1.5 20 20" diffuse="fl_diff" ambient="fl_amb" />
+        </group>
+
+        <group> <!-- Light bulb -->
+            <translate X="-3.25"/>
+            <scale X="0.2"/>
+            <model command="sphere 1 6 10" diffuse="null" ambient="null" specular="null" emission="white"/>
+        </group>
+    </group>
+
+
+    <group> <!-- SMALL HOUSE -->
+        <rotate time="20" axisY="1"/>
+
+        <group> <!-- FLOOR -->
+            <translate Y="-5"/>
+            <model command="plane 20" texture="assets/plane_kitchen.jpg" ambient="test_amb" shininess="128"/>
+        </group>
+
+        <group> <!-- WALLS -->
+            <group> <!-- WALL -->
+                <translate X="-10"/>
+                <model command="box 1 10 20 200" texture="assets/_wall.jpg" diffuse="fl_diff" ambient="fl_amb"/>
+            </group>
+            <group> <!-- WALL -->
+                <translate X="10"/>
+                <model command="box 1 10 20 200" texture="assets/_wall.jpg" diffuse="fl_diff" ambient="fl_amb"/>
+            </group>
+            <group> <!-- WALL -->
+                <translate Z="-10"/>
+                <model command="box 20 10 1 200" texture="assets/_wall.jpg" diffuse="fl_diff" ambient="fl_amb"/>
+            </group>
+            <group> <!-- WALL -->
+                <translate Z="10"/>
+                <model command="box 20 10 1 200" texture="assets/_wall.jpg" diffuse="fl_diff" ambient="fl_amb"/>
+            </group>
+        </group>
+    </group>
+</scene>

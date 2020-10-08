@@ -1,0 +1,74 @@
+<colors>
+    <color name="chocolate" r="0.286" g="0.168" b="0.152" a="1.0"/>
+    <color name="icecream" r="0.298" g="0.882" b="0.631" a="1.0"/>
+    <color name="cone" r="0.694" g="0.419" b="0.262" a="1.0"/>
+</colors>
+
+<scene>
+
+    <!-- Cone -->
+    <camera posX="10" posY="10" posZ="10" />
+    <group>
+        <scale X="0.5" Y="0.5" Z="0.5" />
+        <rotate angle="180" axisX="1"/>
+        <model file="models/cone1.3d" color="cone" />
+    </group>
+
+    <!-- Parte de cima da bola de gelado -->
+    <group>
+        <scale X="0.5" Y="0.5" Z="0.5" />
+        <translate Y="0.60" />
+        <model file="models/sphere1.3d" color="icecream" />
+    </group>
+
+    <!-- Parte de baixo da bola de gelado -->
+    <group>
+        <scale X="0.5" Y="0.15" Z="0.5" />
+        <translate Y="0.1" />
+        <model file="models/sphere2.3d" color="icecream" />
+    </group>
+
+    <!-- Pepitas de chocolate -->
+    <group>
+        <scale X="0.15" Y="0.15" Z="0.15" />
+        <rotate angle="59" axisY="1" axisZ="1"/>
+        <translate Z="0.2" Y="7" />
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+    <group>
+        <scale X="0.15" Y="0.15" Z="0.15" />
+        <translate X="3.7" Y="6.2" Z="1.8" />
+        <rotate angle="33" axisX="1" axisZ="1"/>
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+    <group>
+        <scale X="0.15" Y="0.15" Z="0.15" />
+        <translate X="1.6" Y="5.5" Z="-4.3" />
+        <rotate angle="157" axisX="1" axisY="1" axisZ="1"/>
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+    <group>
+        <scale X="0.1" Y="0.15" Z="0.12" />
+        <translate X="2" Y="3" Z="7.1" />
+        <rotate angle="27" axisY="1" axisZ="1"/>
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+    <group>
+        <scale X="0.1" Y="0.15" Z="0.12" />
+        <translate X="-4" Y="3" Z="-6.4" />
+        <rotate angle="27" axisY="1" axisZ="1"/>
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+    <group>
+        <scale X="0.08" Y="0.11" Z="0.09" />
+        <translate X="-5" Y="9.5" Z="-3" />
+        <rotate angle="70" axisX="1" axisZ="1"/>
+        <model file="models/box.3d" color="chocolate" />
+    </group>
+
+</scene>

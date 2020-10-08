@@ -1,0 +1,90 @@
+<colors>
+    <color name="sun" r="0.913" g="0.517" b="0.125"/>
+    <color name="mercury" r="0.501" g="0.423" b="0.443"/> 
+    <color name="venus" r="0.701" g="0.329" b="0.003"/> 
+    <color name="earth" r="0.219" g="0.298" b="0.392"/> 
+    <color name="mars" r="0.607" g="0.356" b="0.321"/> 
+    <color name="jupiter" r="0.741" g="0.658" b="0.576"/> 
+    <color name="saturn" r="0.756" g="0.666" b="0.541"/> 
+    <color name="uranus" r="0.509" g="0.596" b="0.639"/> 
+    <color name="neptune" r="0.356" g="0.423" b="0.596"/> 
+</colors>
+
+<scene>
+
+    <camera posX="0" posY="40" posZ="100" />
+    <group> <!-- Solar System -->
+        <group> <!-- Sun -->
+            <scale X="5" Y="5" Z="5" />
+            <model file="models/sphere.3d" color="sun"/>
+        </group>
+
+        <group> <!-- Mercury -->
+            <translate time="19.690407248226848" scaling="6">
+                <point X="1" Y="0" Z="0"/>
+                <point X="0.7071" Y="0" Z="-0.7071"/>
+                <point X="0" Y="0" Z="-1"/>
+                <point X="-0.7071" Y="0" Z="-0.7071"/>
+                <point X="-1" Y="0" Z="0"/>
+                <point X="-0.7071" Y="0" Z="0.7071"/>
+                <point X="0" Y="0" Z="1"/>
+                <point X="0.7071" Y="0" Z="0.7071"/>
+            </translate>
+            
+            <rotate time="5.324455233847391" axisY="1"/>
+            <rotate angle="0.01" axisX="1"/>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <model file="models/sphere.3d" color="mercury"/>
+        </group>
+
+        <group> <!-- Venus -->
+            <translate X="8"/>
+            <rotate angle="177.3" axisX="1"/>
+            <scale X="0.6" Y="0.6" Z="0.6" />
+            <model file="models/sphere.3d" color="venus"/>
+        </group>
+
+        <group> <!-- Earth -->
+            <translate X="10"/>
+            <rotate angle="23.4" axisX="1"/>
+            <scale X="1" Y="1" Z="1" />
+            <model file="models/sphere.3d" color="earth"/>
+        </group>
+
+        <group> <!-- Mars -->
+            <translate X="12.5"/>
+            <rotate angle="25.2" axisX="1"/>
+            <scale X="1" Y="1" Z="1" />
+            <model file="models/sphere.3d" color="mars"/>
+        </group>
+
+        <group> <!-- Jupiter -->
+            <translate X="18"/> 
+            <rotate angle="3.1" axisX="1"/>
+            <scale X="3.5" Y="3.5" Z="3.5" />
+            <model file="models/sphere.3d" color="jupiter"/>
+        </group>
+
+        <group> <!-- Saturn -->
+            <translate X="25"/>
+            <rotate angle="26.7" axisX="1"/>
+            <scale X="3" Y="3" Z="3" />
+            <model file="models/sphere.3d" color="saturn"/>
+        </group>
+
+        <group> <!-- Uranus -->
+            <translate X="31"/> 
+            <rotate angle="97.8" axisX="1"/>
+            <rotate time="5.324455233847391" axisY="1"/>
+            <scale X="2" Y="2" Z="2" />
+            <model file="models/sphere.3d" color="uranus"/>
+        </group>
+
+        <group> <!-- Neptune -->
+            <translate X="36"/>
+            <rotate angle="28.3" axisX="1"/>
+            <scale X="2" Y="2" Z="2" />
+            <model file="models/sphere.3d" color="neptune"/>
+        </group>
+    </group>
+</scene>

@@ -1,0 +1,221 @@
+<colors>
+    <color name="rosa" r="0.764" g="0.498" b="0.498" a="1.0"/>
+    <color name="azul" r="0.458" g="0.780" b="0.776" a="1.0"/>
+</colors>
+
+<scene>
+    <camera posX="10" posY="10" posZ="10" />
+
+<!--
+    <model command="sphere 0.2 20 20 20" emission=""/>
+    <model command="cylinder 0.3 0.6 20 20" emission=""/>
+    <model command="cylinder 0.1 0.8 20 20" emission=""/>
+-->
+
+    <group>
+        <!-- cabeça -->
+        <group>
+            <scale X="1.1" Y="1.1" Z="1.1" />
+            <translate Y="0.7" />
+            <model command="sphere 0.2 20 20 20" emission="azul"/>
+        </group>
+
+        <!-- um dos ombros -->
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="0.8" X="0.6"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <!-- outro ombro -->
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="0.8" X="-0.6"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <!-- pescoço -->
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="1.05"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <!-- parte de cima do torso -->
+        <group>
+            <scale X="1" Y="1" Z="0.6" />
+            <translate Y="0.15"/>
+            <model command="cylinder 0.3 0.6 20 20" emission="azul"/>
+        </group>
+    </group>
+
+    <!-- braço esquerdo -->
+    <group>
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="0.25" X="0.70"/>
+            <rotate angle="5" axisZ="1"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.3" Y="0.3" Z="0.3" />
+            <translate  Y="-0.2" X="1.22"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.45" Y="0.5" Z="0.45" />
+            <translate Y="-0.6" X="0.85"/>
+            <rotate angle="4" axisZ="1"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.25" Y="0.25" Z="0.25" />
+            <translate  Y="-2.1" X="1.6"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.30" Y="0.35" Z="0.30" />
+            <translate  Y="-1.7" X="1.35"/>
+            <model command="sphere 0.2 20 20 20" emission="azul"/>
+        </group>
+    </group>
+
+    <!-- braço direito -->
+    <group>
+        <rotate angle="180" axisY="1"/>   
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="0.25" X="0.70"/>
+            <rotate angle="5" axisZ="1"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.3" Y="0.3" Z="0.3" />
+            <translate  Y="-0.2" X="1.22"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.45" Y="0.5" Z="0.45" />
+            <translate Y="-0.6" X="0.85"/>
+            <rotate angle="4" axisZ="1"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.25" Y="0.25" Z="0.25" />
+            <translate  Y="-2.1" X="1.6"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.30" Y="0.35" Z="0.30" />
+            <translate  Y="-1.7" X="1.35"/>
+            <model command="sphere 0.2 20 20 20" emission="azul"/>
+        </group>
+    </group>
+
+    <!-- anca -->
+    <group>
+        <group>
+            <scale X="0.8" Y="0.8" Z="0.8" />
+            <translate Y="-0.3" />
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>    
+
+            <group>
+            <scale X="0.8" Y="0.4" Z="0.5" />
+            <translate Y="-1"/>
+            <model command="cylinder 0.3 0.6 20 20" emission="azul"/>
+        </group>
+
+
+           <!-- ligação de uma perna -->
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="-1.1" X="0.35"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <!-- ligação da outra perna-->
+        <group>
+            <scale X="0.5" Y="0.5" Z="0.5" />
+            <translate Y="-1.1" X="-0.35"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+    </group>
+
+    <!-- perna esquerda-->  
+    <group>
+        <group>
+            <scale X="1" Y="0.7" Z="1" />
+            <translate Y="-1.3" X="0.18"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.4" Y="0.4" Z="0.4" />
+            <translate  Y="-3.05" X="0.45"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.8" Y="0.7" Z="0.8" />
+            <translate Y="-2.22" X="0.225"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.35" Y="0.35" Z="0.35" />
+            <translate  Y="-5.4" X="0.5"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.7" Y="0.5" Z="0.3" />
+            <translate  X="0.26" Y="-4" Z="0.2" />
+            <rotate angle="90" axisX="1" />
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+    </group> 
+
+    <!-- perna direita-->  
+    <group>
+        <rotate angle="180" axisY="1"/>   
+        <group>
+            <scale X="1" Y="0.7" Z="1" />
+            <translate Y="-1.3" X="0.18"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.4" Y="0.4" Z="0.4" />
+            <translate  Y="-3.05" X="0.45"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.8" Y="0.7" Z="0.8" />
+            <translate Y="-2.22" X="0.225"/>
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+
+        <group>
+            <scale X="0.35" Y="0.35" Z="0.35" />
+            <translate  Y="-5.4" X="0.5"/>
+            <model command="sphere 0.2 20 20 20" emission="rosa"/>
+        </group>
+
+        <group>
+            <scale X="0.7" Y="0.5" Z="0.3" />
+            <translate  X="0.26" Y="-4" Z="-0.15" />
+            <rotate angle="90" axisX="1" />
+            <model command="cylinder 0.1 0.8 20 20" emission="azul"/>
+        </group>
+    </group> 
+</scene>

@@ -1,0 +1,27 @@
+<colors>
+    <color name="red" r="0.541" g="0.003"/>
+</colors>
+
+<scene>
+    <camera posX="10" posY="10" posZ="10" />
+
+        <group>
+            <scale X="1" Y="1" Z="0.45" />
+            <rotate angle="180" axisX="1"/>
+            <model file="models/cone.3d" color="red" />
+        </group>
+
+        <group>
+            <scale X="1" Y="1" Z="0.7" />
+            <translate X="0.73" Y="0.40" />
+            <model file="models/sphere1.3d" color="red" />
+        </group>
+
+        <group>
+            <scale X="1" Y="1" Z="0.7" />
+            <translate X="-0.73" Y="0.40" />
+            <model file="models/sphere1.3d" color="red" />
+        </group>
+
+
+</scene>

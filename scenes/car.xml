@@ -1,0 +1,169 @@
+<colors>
+    <color name="wheel" r="0.15" g="0.1" b="0.1" a="1.0"/>
+    <color name="car" r="0.6" g="0" b="0" a="1"/>
+    <color name="road" r="0.8" g="0.9" b="0.9" a="1"/>
+    <color name="road_black" r="0.1" g="0.1" b="0.1" a="1"/>
+    <color name="road_white" r="0.8" g="0.9" b="0.9" a="1"/>
+</colors>
+
+<scene>
+
+    <!-- -->
+    <camera posX="20" posY="20" posZ="20" />
+
+    <!-- move/rotate car -->
+    <group>
+
+        <translate time="5" scaling="17">
+            <point X="1" Y="0" Z="0"/>
+            <point X="0.7071" Y="0" Z="-0.7071"/>
+            <point X="0" Y="0" Z="-1"/>
+            <point X="-0.7071" Y="0" Z="-0.7071"/>
+            <point X="-1" Y="0" Z="0"/>
+            <point X="-0.7071" Y="0" Z="0.7071"/>
+            <point X="0" Y="0" Z="1"/>
+            <point X="0.7071" Y="0" Z="0.7071"/>
+        </translate>
+        <rotate time="5" axisY="1"/>
+
+        <!-- car -->
+        <group>
+
+            <!-- car top -->
+            <group>
+                <group>
+                    <scale X="1" Y="0.5" Z="1.8" />
+                    <model command="box 1 1 1 0" emission="car" />
+                </group>
+                <group>
+                    <scale X="0.9" Y="0.4" Z="1" />
+                    <translate Y="1.2" />
+                    <model command="box 1 1 1 0" emission="car" />
+                </group>
+                <scale X="2.6" Y="2.4" Z="2.8" />
+                <translate Y="0.45" />
+            </group>
+
+            <!-- back wheels -->
+            <group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="-1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <translate Z="-1.48" />
+            </group>
+
+            <!-- front wheels -->
+            <group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="-1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <translate Z="1.48" />
+            </group>
+
+        </group>
+
+    </group>
+
+    <group>
+
+        <translate time="3" scaling="12">
+            <point X="1" Y="0" Z="0"/>
+            <point X="0.7071" Y="0" Z="0.7071"/>
+            <point X="0" Y="0" Z="1"/>
+            <point X="-0.7071" Y="0" Z="0.7071"/>
+            <point X="-1" Y="0" Z="0"/>
+            <point X="-0.7071" Y="0" Z="-0.7071"/>
+            <point X="0" Y="0" Z="-1"/>
+            <point X="0.7071" Y="0" Z="-0.7071"/>
+        </translate>
+        <rotate time="3" axisY="-1"/>
+
+        <!-- car -->
+        <group>
+
+            <!-- car top -->
+            <group>
+                <group>
+                    <scale X="1" Y="0.5" Z="1.8" />
+                    <model command="box 1 1 1 0" emission="car" />
+                </group>
+                <group>
+                    <scale X="0.9" Y="0.4" Z="1" />
+                    <translate Y="1.2" />
+                    <model command="box 1 1 1 0" emission="car" />
+                </group>
+                <scale X="2.6" Y="2.4" Z="2.8" />
+                <translate Y="0.45" />
+            </group>
+
+            <!-- back wheels -->
+            <group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="-1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <translate Z="-1.48" />
+            </group>
+
+            <!-- front wheels -->
+            <group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="-1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <group>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <translate X="1.8" />
+                    <rotate angle="90" axisZ="1"/>
+                    <model command="cylinder 1 2 20 20" emission="wheel" />
+                </group>
+                <translate Z="1.48" />
+            </group>
+
+        </group>
+
+    </group>
+
+    <!-- road -->
+    <group>
+        <translate Y="-0.6" />
+        <models>
+            <!-- <model command="ring 8 20 60" emission="road" /> -->
+            <model command="ring 20 21 60" emission="road_black" />
+            <model command="ring 15 20 60" emission="road_white" />
+            <model command="ring 14 15 60" emission="road_black" />
+            <model command="ring 9 14 60" emission="road_white" />
+            <model command="ring 8 9 60" emission="road_black" />
+        </models>
+        
+    </group>
+
+</scene>

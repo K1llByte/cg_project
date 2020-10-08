@@ -1,0 +1,138 @@
+<colors>
+    <color name="blue" b="1"/>
+    <color name="black" r="0" g="0" b="0" a="1.0"/>
+    <color name="glass" r="0.2" g="0.2" b="0.5" a="0.3"/>
+
+    <color name="test_diff" r="0.8" g="0.8" b="0.8" a="1.0"/>
+    <color name="test_amb" r="0.8" g="0.8" b="0.8" a="1.0"/>
+    <color name="test_spec" r="0.2" g="0.2" b="0.2" a="1.0"/>
+    <color name="test_emi" r="1.0" g="1.0" b="1.0" a="1.0"/>
+
+    <color name="null" r="0.0" g="0.0" b="0.0" a="1.0"/>
+    <color name="white" r="1.0" g="1.0" b="1.0" a="1.0"/>
+
+    <color name="fl_diff" r="0.3" g="0.3" b="0.3" a="1.0"/>
+    <color name="fl_amb" r="0.5" g="0.5" b="0.5" a="1.0"/>
+
+    <color name="tardis_blue2" r="0.203" g="0.254" b="0.443"/>
+    <color name="tardis_blue" r="0.137" g="0.172" b="0.301"/>
+</colors>
+
+<scene>
+    <skybox width="500" texture="assets/skybox_stars.png"/>
+    <lights>
+        <!-- LIGHT 0 -->
+        <light type="DIRECTIONAL" dirX="5" dirY="5" dirZ="0" attenuation="0"/>
+        <light type="DIRECTIONAL" dirX="-5" dirY="5" dirZ="0" attenuation="0"/>
+        <light type="POINT" posX="0" dirY="6.25" dirZ="0" attenuation="0"/>
+    </lights>
+    <camera posX="15" posY="15" posZ="15"/>
+
+    <group>
+            <!-- LIGHT 0 REPRESENTATION -->
+            <translate Y="6.25"/>
+            <model command="sphere 0.1 10 10" diffuse="null" ambient="null" specular="null" emission="white"/>
+    </group>
+
+
+    <group>
+        <!-- <rotate time="5" axisX="1"/> -->
+        <group>
+            
+            <group> <!-- Main -->
+                <model command="box 3.8 8 3.8 2" texture="assets/something.jpeg" diffuse="fl_diff" ambient="test_amb"/>
+            </group>
+
+            <group> <!-- Details -->
+                <scale X="1.05" Y="1.05" Z="1.05" />
+
+                <group> <!-- Bottom -->
+                    <translate Y="-4.25"/>
+                    <model command="box 5.8 0.6 5.8 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                
+                <group> <!-- Pilar 1 -->
+                    <translate X="-2.2" Z="-2.2"/>
+                    <model command="box 1 9 1 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Pilar 2 -->
+                    <translate X="-2.2" Z="2.2"/>
+                    <model command="box 1 9 1 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Pilar 3 -->
+                    <translate X="2.2" Z="2.2"/>
+                    <model command="box 1 9 1 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Pilar 4 -->
+                    <translate X="2.2" Z="-2.2"/>
+                    <model command="box 1 9 1 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                
+                <group> <!-- Top 1 -->
+                    <translate Y="4.25"/>
+                    <model command="box 5.4 1 5.4 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Top 2 -->
+                    <translate Y="4.6"/>
+                    <model command="box 4.9 1 4.9 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Top 3 -->
+                    <translate Y="5"/>
+                    <model command="box 4.4 1 4.4 2" texture="assets/bar.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                
+                <group> <!-- Police 1 -->
+                    <scale X="0.8" Y="0.8" Z="0.8" />
+                    <translate Y="5.35" Z="3"/>
+                    <model command="box 4.5 1 1 2" texture="assets/police.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Police 2 -->
+                    <rotate angle="90" axisY="1"/>
+                    <scale X="0.8" Y="0.8" Z="0.8" />
+                    <translate Y="5.35" Z="3"/>
+                    <model command="box 4.5 1 1 2" texture="assets/police.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Police 3 -->
+                    <rotate angle="180" axisY="1"/>
+                    <scale X="0.8" Y="0.8" Z="0.8" />
+                    <translate Y="5.35" Z="3"/>
+                    <model command="box 4.5 1 1 2" texture="assets/police.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+                <group> <!-- Police 4 -->
+                    <rotate angle="270" axisY="1"/>
+                    <scale X="0.8" Y="0.8" Z="0.8" />
+                    <translate Y="5.35" Z="3"/>
+                    <model command="box 4.5 1 1 2" texture="assets/police.jpeg" diffuse="fl_diff" ambient="fl_amb"/>
+                </group>
+
+                <group> <!-- Lightbulb -->
+                    <translate Y="2.12"/>
+                    <scale X="0.6" Y="0.6" Z="0.6" />
+                    <group> <!-- Light Bottom -->
+                        <translate Y="5.6"/>
+                        <model command="cylinder 0.45 0.5 10 20" diffuse="tardis_blue"/>
+                    </group>
+                    <group> <!-- Light -->
+                        <translate Y="6.1"/>
+                        <model command="cylinder 0.3 0.5 10 20" diffuse="glass"/>
+                    </group>
+                    <group> <!-- Light Top 1 -->
+                        <translate Y="6.4"/>
+                        <model command="cylinder 0.35 0.15 10 20" diffuse="tardis_blue"/>
+                    </group>
+                    <group> <!-- Light Top 2 -->
+                        <translate Y="6.47"/>
+                        <model command="cone 0.38 0.25 10 20" diffuse="tardis_blue"/>
+                    </group>
+                    <group> <!-- Light Top 3 -->
+                        <translate Y="6.7"/>
+                        <model command="cylinder 0.05 0.1 10 20" diffuse="tardis_blue"/>
+                    </group>
+                </group>
+            </group>
+        </group>
+    </group>
+
+
+    
+</scene>
